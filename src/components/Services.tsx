@@ -1,4 +1,3 @@
-import { Card, CardContent } from "./ui/card";
 import { 
   Stethoscope, 
   Shield, 
@@ -10,6 +9,7 @@ import {
   Crown
 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import ServiceCard from "./ServiceCard";
 
 const services = [
   {
@@ -70,28 +70,13 @@ const Services = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <Card 
+          {services.map((service) => (
+            <ServiceCard 
               key={service.title}
-              className={`group shadow-xl border-primary/50 hover:shadow-2xl transition-all duration-700 bg-card ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <CardContent className="p-6 space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center scale-110 group-hover:scale-100 transition-transform">
-                  <service.icon className="h-7 w-7 text-primary" />
-                </div>
-                
-                <h3 className="text-xl font-semibold text-primary group-hover:text-foreground transition-colors">
-                  {service.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+            />
           ))}
         </div>
       </div>

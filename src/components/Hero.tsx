@@ -24,17 +24,17 @@ const Hero = () => {
       </video>
       
       {/* Glass Effect Overlay */}
-      <div className="absolute inset-0 bg-background/30 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-background/15 backdrop-blur-[2px]" />
       
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-3xl">
           <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
               Seu sorriso é nossa
-              <span className="text-primary"> prioridade</span>
+              <span className="text-primary" style={{ textShadow: '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4)' }}> prioridade</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-white leading-relaxed">
               Clínica moderna especializada em diagnóstico, prevenção e tratamento completo para sua saúde bucal.
             </p>
             
@@ -50,7 +50,7 @@ const Hero = () => {
                 size="lg" 
                 variant="outline"
                 onClick={() => document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })}
-                className="border-2 border-primary text-primary hover:text-primary hover:bg-primary/10 hover:border-primary hover:scale-105 active:scale-95 transition-all"
+                className="border-2 border-primary text-primary bg-background/70 hover:text-primary hover:bg-primary/10 hover:border-primary hover:scale-105 active:scale-95 transition-all"
               >
                 Conheça nossos serviços
               </Button>
