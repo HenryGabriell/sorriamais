@@ -31,7 +31,7 @@ const Hero = () => {
           <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
               Seu sorriso é nossa
-              <span className="text-primary" style={{ textShadow: '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4)' }}> prioridade</span>
+              <span className="text-white" style={{ textShadow: '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4)' }}> prioridade</span>
             </h1>
             
             <p className="text-xl text-white leading-relaxed">
