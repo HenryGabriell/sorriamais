@@ -1,8 +1,10 @@
 import { Button } from "./ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useState } from "react";
 
 const Hero = () => {
   const { elementRef, isVisible } = useScrollReveal();
+  const [videoLoaded, setVideoLoaded] = useState(false);
   
   const scrollToContact = () => {
     const element = document.getElementById("contato");
@@ -11,14 +13,20 @@ const Hero = () => {
 
   return (
     <section ref={elementRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Placeholder Background */}
+      {!videoLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary/10 animate-pulse" />
+      )}
+      
       {/* Video Background */}
       <video 
         autoPlay 
         loop 
         muted 
         playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        onLoadedData={() => setVideoLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
       >
         <source src="/videoclinica.mp4" type="video/mp4" />
       </video>
