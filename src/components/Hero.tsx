@@ -34,7 +34,7 @@ const Hero = () => {
               <span className="text-white" style={{ textShadow: '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4)' }}> prioridade</span>
             </h1>
             
-            <p className="text-xl text-white leading-relaxed">
+            <p className="text-xl text-white leading-relaxed" style={{ textShadow: '0 0 8px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3)' }}>
               Clínica moderna especializada em diagnóstico, prevenção e tratamento completo para sua saúde bucal.
             </p>
             
@@ -50,7 +50,7 @@ const Hero = () => {
                 size="lg" 
                 variant="outline"
                 onClick={() => document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })}
-                className="border-2 border-primary text-primary bg-background/70 hover:text-primary hover:bg-primary/10 hover:border-primary hover:scale-105 active:scale-95 transition-all"
+                className="border-2 border-primary text-primary bg-background/70 hover:text-white hover:bg-primary/10 hover:border-primary hover:scale-105 active:scale-95 transition-all"
               >
                 Conheça nossos serviços
               </Button>
