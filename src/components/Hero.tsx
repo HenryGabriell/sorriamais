@@ -28,7 +28,8 @@ const Hero = () => {
         onLoadedData={() => setVideoLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
       >
-        <source src="/videoclinica.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}videoclinica.mp4`} type="video/mp4" />
+
       </video>
       
       {/* Glass Effect Overlay */}
